@@ -1,0 +1,33 @@
+namespace 'minitest' do
+  desc 'test all'
+  task :all do
+    test_numberWords
+    test_fizzBuzz
+    test_softWap
+  end
+
+  task :test_numberWords do
+    test_numberWords
+  end
+
+  task :test_fizzBuzz do
+    test_fizzBuzz
+  end
+
+  task :test_softWap do
+    test_softWap
+  end
+
+  def test_numberWords
+    sh 'ruby spec/numberWords_spec.rb'
+  end
+
+  def test_fizzBuzz
+    sh 'ruby spec/FizzBuzz_spec.rb'
+  end
+
+  def test_softWap
+    sh 'ruby spec/SoftWrap_spec.rb'
+  end
+
+end
