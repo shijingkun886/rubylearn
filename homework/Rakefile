@@ -5,15 +5,17 @@ namespace 'minitest' do
     test_fizzBuzz
     test_softWap
   end
-
+  desc 'test_numberWords'
   task :test_numberWords do
     test_numberWords
   end
 
+  desc 'test_fizzBuzz'
   task :test_fizzBuzz do
     test_fizzBuzz
   end
 
+  desc 'test_softWap'
   task :test_softWap do
     test_softWap
   end
