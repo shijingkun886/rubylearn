@@ -1,35 +1,24 @@
-namespace 'minitest' do
+task :default => ['test:all']
+task :test => :default
+namespace 'test' do
+
   desc 'test all'
-  task :all do
-    test_numberWords
-    test_fizzBuzz
-    test_softWap
-  end
-  desc 'test_numberWords'
-  task :test_numberWords do
-    test_numberWords
+  task :all => [:testNumberWords, :testFizzBuzz, :testSoftWrap]
+
+
+  desc 'test numberWords'
+  task :testNumberWords do
+    ruby 'spec/numberWords_spec.rb'
   end
 
-  desc 'test_fizzBuzz'
-  task :test_fizzBuzz do
-    test_fizzBuzz
+  desc 'test fizzBuzz'
+  task :testFizzBuzz do
+    ruby 'spec/FizzBuzz_spec.rb'
   end
 
-  desc 'test_softWap'
-  task :test_softWap do
-    test_softWap
-  end
-
-  def test_numberWords
-    sh 'ruby spec/numberWords_spec.rb'
-  end
-
-  def test_fizzBuzz
-    sh 'ruby spec/FizzBuzz_spec.rb'
-  end
-
-  def test_softWap
-    sh 'ruby spec/SoftWrap_spec.rb'
+  desc 'test softWrap'
+  task :testSoftWrap do
+    ruby 'spec/SoftWrap_spec.rb'
   end
 
 end
